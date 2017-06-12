@@ -7,9 +7,12 @@ import PouchDB from 'pouchdb';
 export class TasksProvider {
 
   db: any;
+  remote: any;
 
   constructor(public http: Http) {
     this.db = new PouchDB('taskit');
+
+    this.remote = 'http://localhost:5984/taskit';
   }
 
 }
