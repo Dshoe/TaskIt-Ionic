@@ -13,6 +13,14 @@ export class TasksProvider {
     this.db = new PouchDB('taskit');
 
     this.remote = 'http://localhost:5984/taskit';
+
+    let options = {
+      live: true,
+      retry: true,
+      continuous: true
+    };
+
+    this.db.sync(this.remote, options);
   }
 
 }
