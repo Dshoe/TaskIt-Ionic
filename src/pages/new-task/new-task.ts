@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the NewTaskPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
+ * Save new tasks.
  */
 @IonicPage()
 @Component({
@@ -15,10 +12,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class NewTaskPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad NewTaskPage');
   }
 
 }
