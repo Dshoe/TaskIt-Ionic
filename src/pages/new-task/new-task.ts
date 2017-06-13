@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {TasksProvider} from "../../providers/tasks/tasks";
 
 /**
  * Save new tasks.
@@ -11,7 +12,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewTaskPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  task: { title: string } = {
+    title: ''
+  };
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public taskService: TasksProvider) {}
+
+  createTask() {
+    this.taskService.createTask(this.task);
+    this.navCtrl.pop();
   }
 
 }
