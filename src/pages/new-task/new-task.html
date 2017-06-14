@@ -11,14 +11,14 @@
 
 
 <ion-content padding>
-  <form>
+  <form [formGroup]="taskForm" (ngSubmit)="createTask(taskForm.value)">
     <ion-item>
       <ion-label floating>Title</ion-label>
-      <ion-input type="text" [(ngModel)]="task.title" name="title"></ion-input>
+      <ion-input type="text" formControlName="title"></ion-input>
     </ion-item>
-  </form>
 
-  <ion-fab right bottom>
-    <button ion-fab (click)="createTask()"><ion-icon name="checkmark"></ion-icon></button>
-  </ion-fab>
+    <ion-fab right bottom>
+      <button [disabled]="!taskForm.valid" ion-fab><ion-icon name="checkmark"></ion-icon></button>
+    </ion-fab>
+  </form>
 </ion-content>
