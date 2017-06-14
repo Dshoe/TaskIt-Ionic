@@ -15,19 +15,14 @@ export class NewTaskPage {
 
   taskForm: FormGroup;
 
-  task: any;
-
   constructor(public navCtrl: NavController, public taskService: TasksProvider, public formBuilder: FormBuilder) {
     this.taskForm = formBuilder.group({
       title: ['', Validators.required]
     });
   }
 
-  createTask() {
-    this.task = {
-      title: this.taskForm.controls['title'].value
-    };
-    this.taskService.createTask(this.task);
+  createTask(task) {
+    this.taskService.createTask(task);
     this.navCtrl.pop();
   }
 
