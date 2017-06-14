@@ -8,9 +8,10 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list no-lines>
+  <ion-list>
     <ion-item *ngFor="let task of tasks">
-      <ion-item>{{task.title}}</ion-item>
+      <ion-checkbox (click)="deleteTask(task)"></ion-checkbox>
+      <ion-label>{{task.title}}</ion-label>
     </ion-item>
   </ion-list>
 

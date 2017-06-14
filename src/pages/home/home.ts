@@ -16,6 +16,10 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
+    this.getTasks();
+  }
+
+  getTasks() {
     this.taskService.getAllTasks().then((data) => {
       this.tasks = data;
     });
@@ -23,6 +27,11 @@ export class HomePage {
 
   newTask() {
     this.navCtrl.push(NewTaskPage);
+  }
+
+  deleteTask(task) {
+    this.taskService.deleteTask(task);
+    this.getTasks();
   }
 
 }
