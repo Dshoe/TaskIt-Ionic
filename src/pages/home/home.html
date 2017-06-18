@@ -9,10 +9,14 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let task of tasks">
-      <ion-checkbox (click)="deleteTask(task)"></ion-checkbox>
-      <ion-label>{{task.title}}</ion-label>
-    </ion-item>
+    <ion-item-sliding *ngFor="let task of tasks">
+      <button ion-item>{{task.title}}</button>
+      <ion-item-options side="left">
+        <button ion-button (click)="deleteTask(task)">
+          <ion-icon name="checkbox"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 
   <ion-fab right bottom>
