@@ -29,6 +29,10 @@ export class HomePage {
     this.navCtrl.push(NewTaskPage);
   }
 
+  viewTask(task) {
+    this.navCtrl.push(NewTaskPage, { task: task, isUpdate: true });
+  }
+
   deleteTask(task) {
     this.taskService.deleteTask(task);
     this.getTasks();
