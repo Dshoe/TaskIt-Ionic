@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TasksProvider } from "../../providers/tasks/tasks";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
@@ -15,14 +15,27 @@ export class NewTaskPage {
 
   taskForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public taskService: TasksProvider, public formBuilder: FormBuilder) {
+  task: { title: string } = {
+    title: ''
+  };
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public taskService: TasksProvider, public formBuilder: FormBuilder) {
     this.taskForm = formBuilder.group({
       title: ['', Validators.required]
     });
+
+    if (this.navParams.get('task')) {
+      this.task = this.navParams.get('task');
+    }
   }
 
-  createTask(task) {
-    this.taskService.createTask(task);
+  saveTask(task) {
+    if (!this.navParams.get('isUpdate')) {
+      this.taskService.createTask(task);
+    } else {
+      this.taskService.updateTask(task);
+    }
+    
     this.navCtrl.pop();
   }
 
