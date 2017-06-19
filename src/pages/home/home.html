@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item-sliding *ngFor="let task of tasks">
-      <button ion-item>{{task.title}}</button>
+      <button ion-item (click)="viewTask(task)">{{task.title}}</button>
       <ion-item-options side="left">
         <button ion-button (click)="deleteTask(task)">
           <ion-icon name="checkbox"></ion-icon>
