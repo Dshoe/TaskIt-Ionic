@@ -15,13 +15,15 @@ export class NewTaskPage {
 
   taskForm: FormGroup;
 
-  task: { title: string } = {
-    title: ''
+  task: { title: string, description: string } = {
+    title: '',
+    description: ''
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public taskService: TasksProvider, public formBuilder: FormBuilder) {
     this.taskForm = formBuilder.group({
-      title: ['', Validators.required]
+      title: ['', Validators.required],
+      description: ['', Validators.nullValidator]
     });
 
     if (this.navParams.get('task')) {
