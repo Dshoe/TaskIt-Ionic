@@ -62,7 +62,7 @@ export class TasksProvider {
   deleteTask(task) {
     this.db.remove(task).catch((err) => {
       console.log(err);
-    })
+    });
   }
 
   handleChange(change) {
