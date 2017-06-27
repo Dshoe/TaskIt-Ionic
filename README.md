@@ -11,12 +11,12 @@ Custom todo list and task manager.
 
 ### Ensure Ionic and Cordova are installed
 ```bash
-$ sudo npm install -g ionic cordova
+$ npm install -g ionic cordova
 ```
 
 ### Add CORS to CouchDB
 ```bash
-$ sudo npm install -g add-cors-to-couchdb
+$ npm install -g add-cors-to-couchdb
 $ add-cors-to-couchdb
 ```
 
