@@ -12,7 +12,7 @@ export class TasksProvider {
   constructor() {
     this.db = new PouchDB('taskit');
 
-    this.remote = 'http://localhost:5984/taskit';
+    this.remote = 'http://admin:password@127.0.0.1:5984/taskit';
 
     let options = {
       live: true,
