@@ -35,7 +35,6 @@ export class HomePage {
 
   deleteTask(task) {
     this.taskService.deleteTask(task);
-    this.getTasks();
   }
 
 }
