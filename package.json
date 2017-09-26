@@ -42,7 +42,13 @@
     "description": "An Ionic project",
     "cordova": {
         "plugins": {
-            "cordova-plugin-safariviewcontroller": {}
+            "cordova-plugin-safariviewcontroller": {},
+            "cordova-plugin-customurlscheme": {
+                "URL_SCHEME": "com.devinshoemaker.taskit-ionic",
+                "ANDROID_SCHEME": "com.devinshoemaker.taskit-ionic",
+                "ANDROID_HOST": "paranoidcoder.auth0.com",
+                "ANDROID_PATHPREFIX": "/cordova/com.devinshoemaker.taskit-ionic/callback"
+            }
         }
     }
 }
