@@ -1,5 +1,8 @@
 {
   "name": "TaskIt-Ionic",
   "app_id": "42607722",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }
